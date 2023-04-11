@@ -1,0 +1,17 @@
+{
+  "base": {
+    "logo": "",
+    "project": "wildberries",
+    "environment": "qa.guru",
+    "comment": "tests for wb",
+    "reportLink": "https://jenkins.autotests.cloud",
+    "language": "en",
+    "allureFolder": "build/reports/allure-report/allureReport",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "6287280684:AAEWOGSZKvFhW-t2jUHgf88RNpaWjdF48WQ",
+    "chat": "210051919",
+    "replyTo": ""
+  }
+}
