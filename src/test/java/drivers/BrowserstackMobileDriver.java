@@ -13,6 +13,7 @@ import java.net.URL;
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
     public static MobileDriverConfig config = ConfigFactory.create(MobileDriverConfig.class, System.getProperties());
+
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
@@ -29,6 +30,7 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
 
         return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
     }
+
     public static URL getBrowserstackUrl() {
         try {
             return new URL(config.getBaseUrl());

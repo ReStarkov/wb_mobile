@@ -6,13 +6,13 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
-import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
-import static io.appium.java_client.remote.MobilePlatform.ANDROID;
 
 import java.io.File;
-
 import java.net.MalformedURLException;
 import java.net.URL;
+
+import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
+import static io.appium.java_client.remote.MobilePlatform.ANDROID;
 
 
 public class LocalMobileDriver implements WebDriverProvider {
@@ -42,8 +42,9 @@ public class LocalMobileDriver implements WebDriverProvider {
 
         return new AndroidDriver(getAppiumServerUrl(), options);
     }
+
     private File getApk() {
-    return new File("src/test/resources/apps/app-wb.apk");
-}
+        return new File("src/test/resources/apps/app-wb.apk");
+    }
 
 }

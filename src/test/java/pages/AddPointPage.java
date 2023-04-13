@@ -12,7 +12,7 @@ public class AddPointPage {
     private SelenideElement button = $(byClassName("android.widget.Button"));
     private SelenideElement search = $(byClassName("android.widget.TextView"));
     private SelenideElement inputSearch = $(byClassName("android.widget.EditText"));
-    private SelenideElement firstElementInSearch = $(byClassName("android.widget.TextView"),1);
+    private SelenideElement firstElementInSearch = $(byClassName("android.widget.TextView"), 1);
 
     private SelenideElement acceptButton = $x("/hierarchy/android.widget.FrameLayout/android.widget." +
             "LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android." +
