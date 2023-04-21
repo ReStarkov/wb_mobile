@@ -7,14 +7,12 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.*;
-import static io.appium.java_client.AppiumBy.accessibilityId;
 import static io.qameta.allure.Allure.step;
 
 
 public class MainPageTest extends TestBase {
     @BeforeEach
-    void gettingStartedTest () {
+    void gettingStartedTest() {
         step("Выбор страны и отказ от обновления", () -> {
             startPage.getRussiButton().click();
             startPage.getLaterButton().click();
@@ -25,7 +23,7 @@ public class MainPageTest extends TestBase {
     @Test
     @Tag("android")
     @DisplayName("Проверка соответствия выдачи результатов поиска")
-    void searchTest () {
+    void searchTest() {
         step("Ввод в поисковую строку текста 'atomic heart ps4'", () -> {
             mainPage.getSearch().click();
             searchPage.getInputSearch().sendKeys("Atomic heart ps4");
@@ -38,9 +36,9 @@ public class MainPageTest extends TestBase {
     @Test
     @Tag("android")
     @DisplayName("Добавление пункта выдачи")
-    void addPointTest () {
+    void addPointTest() {
         step("Нажатие на меню выбора пункта выдачи ", () -> {
-            $(accessibilityId("Адрес доставки Москва")).click();
+            mainPage.getChoosePoint().click();
         });
         step("Кнопка добавления пункта выдачи отображается на открывшейся странице", () -> {
             addPointPage.getButton().shouldBe(visible);
@@ -72,19 +70,19 @@ public class MainPageTest extends TestBase {
             addPointPage.getSaveButton().click();
         });
         step("На главной странице отображается введенный ранее адрес.", () -> {
-            $(accessibilityId("Адрес доставки г. Москва, шоссе Энтузиастов д. 55")).shouldBe(visible);
+            mainPage.getExpectPoint().shouldBe(visible);
         });
     }
 
     @Test
     @Tag("android")
     @DisplayName("Переключение валюты")
-    void moneyTest () {
+    void moneyTest() {
         step("Нажатие на иконку отображени стоимости товаров (по умолчанию рубль)", () -> {
             mainPage.getCurrency().click();
         });
         step("Выбор армянского драма", () -> {
-            $(accessibilityId("Армянский драм")).click();
+            mainPage.getAmCurrency().click();
         });
         step("Проверка результата", () -> {
             mainPage.getCurrencyName().shouldHave(text("драм"));
